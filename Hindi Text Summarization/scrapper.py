@@ -29,7 +29,7 @@ while True:
 		print("getting page number "+str(page_num))
 		time.sleep(5)
 
-	if page_num == 2:
+	else:
 		soup = BeautifulSoup(driver.page_source, features="html.parser")
 		ids = []
 		headlines = []
@@ -62,8 +62,6 @@ while True:
 		# print(links[0])
 
 		for i in range(len(ids)):
-			
-
 			obj = {
 				"_id": ids[i],
 				"headline": headlines[i],
@@ -71,33 +69,6 @@ while True:
 				"src": links[i],
 				"news": news[i]
 			}
-
-			collection.insert_one(obj)
+			collection.replace_one(obj)
 
 		break
-
-
-# while driver.find_elements_by_css_selector('.load-more'):
-#     driver.find_element_by_css_selector('.load-more').click()
-#     page_num += 1
-#     # if page_num == 2:
-#     # 	break
-#     # print("HTML: ", driver.page_source)
-#     # print("getting page number "+str(page_num))
-
-#     soup = BeautifulSoup(driver.page_source)
-article = Article(url)
-
-	
-	if article.html:
-		article.parse()
-		news.append(article.text)
-
-#     headlines = soup.findAll("span", {"itemprop" : "headline"})
-
-#     print(headlines)
-
-#     time.sleep(1)
-
-# html = driver.page_source.encode('utf-8')
-
