@@ -5,6 +5,15 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+#virtualenv
+env
+
+# mac weed folder
+.DS_Store
+
+# api
+__pycache__
+
 # Runtime data
 pids
 *.pid
