@@ -5,7 +5,7 @@ from pymongo import MongoClient
 from urllib.parse import quote_plus
 from newspaper import Article
 
-uri = "mongodb://%s:%s@192.168.26.120:64646/hindi_summary" % (quote_plus("saurabh"), quote_plus("mongo@hindi"))
+uri = "mongodb://%s:%s@192.168.26.120:64646/hindi_summary" % (quote_plus("saurabh"), quote_plus("xxxxxxxx"))
 client = MongoClient(uri)
 db = client['hindi_summary']
 collection = db["summary"]
